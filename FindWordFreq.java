@@ -1,5 +1,5 @@
 /*
-Given a file, the following program can find the total occurences of the given word in the file
+Given a file, the following program can find the total occurences of the given word in the file using Multi-threading
 */
 
 import java.io.*;
@@ -78,7 +78,7 @@ public class FindWordFreq
             numofLines++;
         }
         
-		//Making sure the threads don't exceed the number of lines
+	//Making sure the threads don't exceed the number of lines
         if(numofThreads > numofLines)
 			numofThreads = numofLines;
     
@@ -86,7 +86,7 @@ public class FindWordFreq
         List<String> segment = new ArrayList();
         int index = 0;
         
-		//Making multiple 'segment' lists and adding them to the master list 'linesegment'
+	//Making multiple 'segment' lists and adding them to the master list 'linesegment'
         while(index < numofLines)
         {
             segment.add(temp.get(index));
@@ -99,7 +99,7 @@ public class FindWordFreq
             }
         }
  
-		//Making sure that all segments are covered and will run in 'numofThreads' threads
+	//Making sure that all segments are covered and will run in 'numofThreads' threads
         if((numofLines % numofThreads)!=0)
         {
             for(String i : segment)
